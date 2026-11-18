@@ -1,0 +1,58 @@
+# SPDX-FileCopyrightText: NVIDIA CORPORATION & AFFILIATES
+# Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+#
+# SPDX-License-Identifier: Apache-2.0
+
+# Generate ranked grasps for referenced object clouds, reporting batch progress.
+# Return per-object candidates and success flags, batch status, and processing duration.
+
+# Goal
+
+# References to clouds owned by the GraspGenX server; IDs must be unique within the batch.
+# Each reference expires on cache eviction or server restart.
+isaac_ros_graspgenx_interfaces/ObjectCloudReference[] objects
+
+# Gripper model to use; empty selects the server's configured default.
+string gripper_name
+
+# Number of grasp proposals to generate per object; must be positive.
+int32 num_grasps
+
+# Minimum accepted confidence on the [0.0, 1.0] score scale; negative disables filtering.
+float32 grasp_confidence_threshold
+
+# Maximum number of highest-confidence grasps to return per object; -1 keeps all.
+int32 top_k_grasps
+
+# Base seed combined with each object_id to seed point sampling and diffusion noise.
+# Controls randomness for debugging and comparisons between runs. The same base seed
+# and IDs repeat these streams for the same inputs and configuration; different seeds
+# explore different grasp proposals. Model inference can still be nondeterministic.
+int64 random_seed
+
+---
+# Result
+
+# Per-object candidates and success status, matched to inputs by object_id.
+isaac_ros_graspgenx_interfaces/ObjectGraspResult[] object_results
+
+# True when every requested object was processed successfully.
+bool all_objects_succeeded
+
+# Human-readable batch outcome or failure details.
+string message
+
+# Total batch processing duration in seconds.
+float64 processing_time_sec
+
+---
+# Feedback
+
+# Human-readable description of the current processing stage.
+string status
+
+# Number of objects whose processing has completed, including failed objects.
+uint32 completed_objects
+
+# Fraction of batch processing completed, in [0.0, 1.0].
+float32 progress

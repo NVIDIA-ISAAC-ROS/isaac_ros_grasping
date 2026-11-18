@@ -1,0 +1,12 @@
+# SPDX-FileCopyrightText: NVIDIA CORPORATION & AFFILIATES
+# Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-License-Identifier: Apache-2.0
+/**:
+  ros__parameters:
+    force_engine_update: false
+    input_tensor_names: [feat, coord, grid_coord, code, order, inverse, sweep_volume, init_noise, step_noise]
+    input_binding_names: [feat, coord, grid_coord, code, order, inverse, sweep_volume, init_noise, step_noise]
+    output_tensor_names: [output0, output1]
+    output_binding_names: [output0, output1]
+    input_queue_size: 1
+    output_queue_size: 1

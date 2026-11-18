@@ -1,0 +1,54 @@
+{
+  "source": "ros_ws/src/isaac_ros_graspgenx/isaac_ros_graspgenx/test/rosbags/foundationstereo_sam_can",
+  "model": "SAM ViT-B",
+  "checkpoint_sha256": "ec2df62732614e57411cdcf32a23ffdf28910380d03139ee0f4fcbe91eb8c912",
+  "objects": [
+    {
+      "object": "center can",
+      "mask_topic": "/segmentation_can",
+      "notes": "Copied unchanged from the source bag; see its generation_manifest.json."
+    },
+    {
+      "object": "mac and cheese box",
+      "mask_topic": "/segmentation_box",
+      "prompt_box_xyxy": [
+        772,
+        280,
+        959,
+        575
+      ],
+      "device": "cuda",
+      "frames": [
+        {
+          "stamp_ns": 1787723330838015625,
+          "sam_score": 0.9933376312255859,
+          "mask_pixels": 41407,
+          "valid_depth_pixels": 41407,
+          "depth_median_m": 0.32277828454971313
+        },
+        {
+          "stamp_ns": 1787723333739237305,
+          "sam_score": 0.993140459060669,
+          "mask_pixels": 41425,
+          "valid_depth_pixels": 41425,
+          "depth_median_m": 0.32284173369407654
+        },
+        {
+          "stamp_ns": 1787723336607133057,
+          "sam_score": 0.9950900077819824,
+          "mask_pixels": 41426,
+          "valid_depth_pixels": 41426,
+          "depth_median_m": 0.3227907419204712
+        },
+        {
+          "stamp_ns": 1787723339341685791,
+          "sam_score": 0.9947443604469299,
+          "mask_pixels": 41437,
+          "valid_depth_pixels": 41437,
+          "depth_median_m": 0.3228462338447571
+        }
+      ]
+    }
+  ],
+  "notes": "All source records are retained in order. Each box mask copies the RGB header and is recorded after the can mask of the same frame; later records in that frame are delayed by 1 ns."
+}

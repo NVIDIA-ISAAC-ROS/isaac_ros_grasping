@@ -1,0 +1,52 @@
+# SPDX-FileCopyrightText: NVIDIA CORPORATION & AFFILIATES
+# Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+#
+# SPDX-License-Identifier: Apache-2.0
+
+# Generate ranked grasps for a referenced object cloud, reporting processing progress.
+# Return grasp candidates, success status, outcome details, and processing duration.
+
+# Goal
+
+# Reference to a cloud owned by the GraspGenX server.
+# Expires on cache eviction or server restart.
+isaac_ros_graspgenx_interfaces/ObjectCloudReference object
+
+# Gripper model to use; empty selects the server's configured default.
+string gripper_name
+
+# Number of grasp proposals to generate per object; must be positive.
+int32 num_grasps
+
+# Minimum accepted confidence on the [0.0, 1.0] score scale; negative disables filtering.
+float32 grasp_confidence_threshold
+
+# Maximum number of highest-confidence grasps to return per object; -1 keeps all.
+int32 top_k_grasps
+
+# Seed for point sampling and diffusion noise, controlling randomness for debugging
+# and comparisons between runs. The same seed repeats these random streams for the
+# same input and configuration; different seeds explore different grasp proposals.
+# Identical grasps are not guaranteed because model inference can be nondeterministic.
+int64 random_seed
+
+---
+# Result
+
+# Grasp candidates and success status, correlated with the requested object_id.
+isaac_ros_graspgenx_interfaces/ObjectGraspResult object_result
+
+# Human-readable action outcome or failure details.
+string message
+
+# Total action processing duration in seconds.
+float64 processing_time_sec
+
+---
+# Feedback
+
+# Human-readable description of the current processing stage.
+string status
+
+# Fraction of processing completed, in [0.0, 1.0].
+float32 progress

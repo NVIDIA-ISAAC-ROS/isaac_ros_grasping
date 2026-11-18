@@ -1,0 +1,45 @@
+{
+  "source": "/home/yash/workspaces/colossus_saved_files/isaac/direct_foundationstereo_native_outputs/direct_foundationstereo_native_outputs_0.mcap",
+  "model": "SAM ViT-B",
+  "checkpoint_sha256": "ec2df62732614e57411cdcf32a23ffdf28910380d03139ee0f4fcbe91eb8c912",
+  "prompt_box_xyxy": [
+    567,
+    319,
+    660,
+    466
+  ],
+  "object": "center can",
+  "mask_topic": "/segmentation_can",
+  "device": "cpu",
+  "frames": [
+    {
+      "stamp_ns": 1787723330838015625,
+      "sam_score": 0.9844939708709717,
+      "mask_pixels": 9482,
+      "valid_depth_pixels": 9482,
+      "depth_median_m": 0.4409922659397125
+    },
+    {
+      "stamp_ns": 1787723333739237305,
+      "sam_score": 0.9849759340286255,
+      "mask_pixels": 9480,
+      "valid_depth_pixels": 9480,
+      "depth_median_m": 0.44096240401268005
+    },
+    {
+      "stamp_ns": 1787723336607133057,
+      "sam_score": 0.9849558472633362,
+      "mask_pixels": 9474,
+      "valid_depth_pixels": 9474,
+      "depth_median_m": 0.44092458486557007
+    },
+    {
+      "stamp_ns": 1787723339341685791,
+      "sam_score": 0.9846993684768677,
+      "mask_pixels": 9487,
+      "valid_depth_pixels": 9487,
+      "depth_median_m": 0.44098836183547974
+    }
+  ],
+  "notes": "Four unique source snapshots. Original header stamps retained; recording times reordered to deliver calibration first. Calibration copied from model_camera_info without modification."
+}
