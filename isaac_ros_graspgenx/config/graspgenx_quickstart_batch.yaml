@@ -1,0 +1,8 @@
+# SPDX-FileCopyrightText: NVIDIA CORPORATION & AFFILIATES
+# Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-License-Identifier: Apache-2.0
+
+# One mask topic per object. Batch result i belongs to mask_topics[i].
+mask_topics:
+  - /segmentation_can
+  - /segmentation_box

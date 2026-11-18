@@ -1,0 +1,93 @@
+Panels:
+  - Class: rviz_common/Displays
+    Help Height: 0
+    Name: Displays
+    Tree Height: 140
+  - Class: rviz_common/Views
+    Name: Views
+Visualization Manager:
+  Class: ""
+  Global Options:
+    Background Color: 30; 30; 30
+    Fixed Frame: base_link
+    Frame Rate: 30
+  Displays:
+    - Class: rviz_default_plugins/PointCloud2
+      Name: Full Scene
+      Enabled: true
+      Topic:
+        Value: /graspgenx/visualization/full_scene_cloud
+        Reliability Policy: Reliable
+        Durability Policy: Transient Local
+        History Policy: Keep Last
+        Depth: 1
+      Style: Points
+      Size (Pixels): 2
+      Color Transformer: FlatColor
+      Color: 150; 150; 150
+      Position Transformer: XYZ
+    - Class: rviz_default_plugins/PointCloud2
+      Name: Segmented Object
+      Enabled: true
+      Topic:
+        Value: /graspgenx/visualization/segmented_object_cloud
+        Reliability Policy: Reliable
+        Durability Policy: Transient Local
+        History Policy: Keep Last
+        Depth: 1
+      Style: Points
+      Size (Pixels): 4
+      Color Transformer: FlatColor
+      Color: 0; 180; 255
+      Position Transformer: XYZ
+    - Class: rviz_default_plugins/MarkerArray
+      Name: Object Center
+      Enabled: true
+      Topic:
+        Value: /graspgenx/visualization/object_mean
+        Reliability Policy: Reliable
+        Durability Policy: Transient Local
+        History Policy: Keep Last
+        Depth: 1
+    - Class: rviz_default_plugins/MarkerArray
+      Name: Ranked Grasps
+      Enabled: true
+      Topic:
+        Value: /graspgenx/visualization/grasp_markers
+        Reliability Policy: Reliable
+        Durability Policy: Transient Local
+        History Policy: Keep Last
+        Depth: 1
+    - Class: rviz_default_plugins/Image
+      Name: RGB Scene
+      Enabled: true
+      Max Value: 1
+      Median window: 5
+      Min Value: 0
+      Normalize Range: true
+      Topic:
+        Value: /graspgenx/rgb_image
+        Reliability Policy: Reliable
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Depth: 5
+  Tools:
+    - Class: rviz_default_plugins/Interact
+      Hide Inactive Objects: true
+    - Class: rviz_default_plugins/MoveCamera
+    - Class: rviz_default_plugins/Select
+    - Class: rviz_default_plugins/FocusCamera
+  Views:
+    Current:
+      Class: rviz_default_plugins/Orbit
+      Distance: 1.25
+      Focal Point:
+        X: 0.0
+        Y: 0.0
+        Z: 0.5
+      Pitch: -1.57
+      Yaw: 4.72
+Window Geometry:
+  Width: 1280
+  Height: 800
+  QMainWindow State: 000000ff00000000fd0000000100000000000001f8000002ccfc0200000003fb000000120052004700420020005300630065006e0065010000003a0000015c0000001600fffffffb000000100044006900730070006c006100790073010000019c000000c6000000c600fffffffb0000000a0056006900650077007301000002680000009e0000009e00ffffff00000302000002cc00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000

@@ -1,0 +1,50 @@
+rosbag2_bagfile_information:
+  version: 5
+  storage_identifier: sqlite3
+  duration:
+    nanoseconds: 8503670170
+  starting_time:
+    nanoseconds_since_epoch: 1787723330838015625
+  message_count: 20
+  topics_with_message_count:
+    - topic_metadata:
+        name: /segmentation_can
+        type: sensor_msgs/msg/Image
+        serialization_format: cdr
+        offered_qos_profiles: ""
+      message_count: 4
+    - topic_metadata:
+        name: /segmentation_box
+        type: sensor_msgs/msg/Image
+        serialization_format: cdr
+        offered_qos_profiles: ""
+      message_count: 4
+    - topic_metadata:
+        name: /offline_foundationstereo/model_camera_info
+        type: sensor_msgs/msg/CameraInfo
+        serialization_format: cdr
+        offered_qos_profiles: ""
+      message_count: 4
+    - topic_metadata:
+        name: /offline_foundationstereo/depth_image
+        type: sensor_msgs/msg/Image
+        serialization_format: cdr
+        offered_qos_profiles: ""
+      message_count: 4
+    - topic_metadata:
+        name: /offline_foundationstereo/model_rgb
+        type: sensor_msgs/msg/Image
+        serialization_format: cdr
+        offered_qos_profiles: ""
+      message_count: 4
+  compression_format: ""
+  compression_mode: ""
+  relative_file_paths:
+    - foundationstereo_sam_can_box_0.db3
+  files:
+    - path: foundationstereo_sam_can_box_0.db3
+      starting_time:
+        nanoseconds_since_epoch: 1787723330838015625
+      duration:
+        nanoseconds: 8503670170
+      message_count: 20
